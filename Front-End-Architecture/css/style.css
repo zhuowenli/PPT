@@ -41,3 +41,12 @@ a{
 a:hover{
     color: #FF4D2E;
 }
+
+pre code{
+    word-break: break-word;
+}
+
+p{
+    font-family: Monaco;
+}
+

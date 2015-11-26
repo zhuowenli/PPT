@@ -1,0 +1,27 @@
+@charset "utf-8";
+/**
+ * @author: 卓文理
+ * @email : 531840344@qq.com
+ */
+
+@import "bower_components/sassCore/base";
+
+@mixin table-scaffolding {
+    th {
+        text-align: center;
+        font-weight: bold;
+    }
+    td, th { padding: 2px; }
+}
+
+@mixin left($dist) {
+    float: left;
+    margin-left: $dist;
+}
+
+#data {
+    @include left(10px);
+    @include transition(all 0.3s ease);
+    @include table-scaffolding;
+}
+

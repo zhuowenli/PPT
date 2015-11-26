@@ -123,7 +123,89 @@ SVG                | Canvas                               |         存储、定
 
 [slide]
 
-### CSS
+```html
+<html>
+<body>
+    <article class="my-article">
+        <h1>Hello "world"...</h1>
+        <p>
+            The three wise monkeys [. . .] sometimes called the three mystic apes--are a pictorial maxim.
+            Together they embody the proverbial principle to ("see no evil, hear no evil, speak no evil").
+            The three monkeys are Mizaru (:see_no_evil:), covering his eyes, who sees no evil;
+            Kikazaru (:hear_no_evil:), covering his ears, who hears no evil;
+            and Iwazaru (:speak_no_evil:), covering his mouth, who speaks no evil.
+        </p>
+    </article>
+</body>
+</html>
+```
+
+--------------
+
+在段落中包含了一些 emoji 表情的文本表示，比如`:speak_no_evil:`等。如何将其换成可在网页上直接显示的表情呢？
+
+[slide]
+
+我们可以借助 PostHTML 的插件[PostHTML-Retext](https://github.com/voischev/posthtml-retext)来实现：
+
+------------
+
+```js
+var fs = require('fs'),
+    posthtml = require('posthtml'),
+    html = fs.readFileSync('path/to/file.html');
+
+posthtml()
+    .use(require('posthtml-retext')([
+        [require('retext-emoji'), { convert: 'encode' }], // Array if plugin has options
+        require('retext-smartypants')
+    ]))
+    .process(html)
+    .then(function(result) {
+        fs.writeFileSync('path/to/file.html');
+    })
+```
+
+[slide]
+
+```html
+<html>
+<body>
+    <article class="my-article">
+        <h1>Hello “world”…</h1>
+        <p>
+            The three wise monkeys […] sometimes called the three mystic apes—are a pictorial maxim.
+            Together they embody the proverbial principle to (“see no evil, hear no evil, speak no evil”).
+            The three monkeys are Mizaru (🙈), covering his eyes, who sees no evil;
+            Kikazaru (🙉), covering his ears, who hears no evil;
+            and Iwazaru (🙊), covering his mouth, who speaks no evil.
+        </p>
+    </article>
+</body>
+</html>
+```
+
+[slide]
+
+```js
+var gulp     = require('gulp');
+var posthtml = require('gulp-posthtml');
+var retext   = require('posthtml-retext');
+var emoji    = require('retext-emoji');
+var smartypants = require('retext-smartypants');
+
+gulp.task('html', function() {
+    return gulp.src('*.html')
+        .pipe(posthtml(retext([[emoji, {convert: 'encode'}], smartypants])))
+        .pipe(gulp.dest('build/'));
+});
+
+gulp.task('default', ['html']);
+```
+
+[slide]
+
+## CSS
 
 [slide]
 
@@ -145,10 +227,134 @@ Semantic、Bootstrap...
 框架   | [Bootstrap](http://getbootstrap.com/) | [Compass](http://beta.compass-style.org) [Bootstrap](http://getbootstrap.com/css/#sass) [Foundation](http://foundation.zurb.com/) [Bourbon](http://bourbon.io) [Base.Sass](https://github.com/jsw0528/base.sass) |
 
 [slide]
+<div class="columns-2">
+    <pre>
+        <code class="scss">
+@mixin table-scaffolding {
+    th {
+        text-align: center;
+        font-weight: bold;
+    }
+    td, th { padding: 2px; }
+}
+
+@mixin left($dist) {
+    float: left;
+    margin-left: $dist;
+}
+
+#data {
+    @include left(10px);
+    @include transition(all 0.3s ease);
+    @include table-scaffolding;
+}
+        </code>
+    </pre>
+    <pre>
+        <code class="css">
+#data{
+    float: left;
+    margin-left: 10px;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+#data th {
+    text-align: center;
+    font-weight: bold;
+}
+
+#data td, #data th {
+    padding: 2px;
+}
+
+
+
+</code>
+    </pre>
+</div>
+
+[slide]
 
 ### 后处理器
 
 [slide]
 
 [PostCSS](https://github.com/postcss/postcss)、[Rework](https://github.com/reworkcss/rework)
+
+[slide]
+
+## JavaScript
+
+[slide]
+
+熟知的库：
+
+[AngularJS](https://github.com/angular/angular)、[React](https://github.com/facebook/react)、[Vue](http://cn.vuejs.org/)、[Ember](http://emberjs.com/)、[Polymer](https://www.polymer-project.org)....
+
+[slide]
+
+### 模块化
+
+[slide]
+
+### CommonJS
+
+--------
+
+CommonJS就是为JS的表现来制定规范。因为js没有模块的功能，所以CommonJS应运而生。它希望js可以在任何地方运行，不只是浏览器中。
+
+[slide]
+
+Node，CommonJS，浏览器以及W3C之间的关系
+
+-----------
+
+|------------浏览器-----------| |--------------CommonJS----------------|
+
+| BOM | | DOM | | ECMAScript | | FS | | TCP | | Stream | Buffer | |...|
+
+|-----W3C-----| |------------------------Node-------------------------|
+
+[slide]
+
+AMD、CMD
+
+它就主要为前端JS的表现制定规范。
+
+[SeaJS与RequireJS异同](https://github.com/seajs/seajs/issues/277)
+[AMD中文wiki](https://github.com/amdjs/amdjs-api/wiki/AMD-&#40;%E4%B8%AD%E6%96%87%E7%89%88&#41;)
+[RequireJS中文wiki](https://github.com/amdjs/amdjs-api/wiki/require-&#40;%E4%B8%AD%E6%96%87%E7%89%88&#41;)
+
+[slide]
+
+### 模块打包
+
+RequireJS、Browserify、Webpack、Sae.js
+
+[slide]
+
+### 包管理器
+
+npm、bowers、Yeoman
+
+[slide]
+
+### 代码测试
+
+Mocha、Jasmine、Intern
+
+[slide]
+
+### 任务管理
+
+Grunt、Gulp、Broccoli
+
+[slide]
+
+###
+
+
+
 
