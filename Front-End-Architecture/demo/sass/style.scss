@@ -14,7 +14,7 @@
     td, th { padding: 2px; }
 }
 
-@mixin left($dist) {
+@mixin left($dist:2px) {
     float: left;
     margin-left: $dist;
 }
