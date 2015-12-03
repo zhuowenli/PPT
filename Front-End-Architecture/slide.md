@@ -99,7 +99,7 @@ usemathjax: yes
 ## WEB 2.0
 
 2013++
- 
+
 [slide]
 
 html5
@@ -541,4 +541,6 @@ Node，CommonJS，浏览器以及W3C之间的关系
 - [AMD中文wiki](https://github.com/amdjs/amdjs-api/wiki/AMD-&#40;%E4%B8%AD%E6%96%87%E7%89%88&#41;)
 - [SeaJS与RequireJS异同](https://github.com/seajs/seajs/issues/277)
 - [前端架构指南](https://github.com/zhuowenli/Front-End-Architecture)
+- [fucking coffee](https://github.com/NARKOZ/hacker-scripts)
+- [ES5、ES6、ES7统计](https://kangax.github.io/compat-table/es6/)
 - [Fork ppt，查看demo](https://github.com/zhuowenli/PPT)

@@ -11,7 +11,7 @@ var autoprefixer = require('autoprefixer');
 
 gulp.task('postcss', function () {
     return gulp.src('*.css')
-        .pipe( postcss([autoprefixer, cssnano]) )
+        .pipe( postcss([autoprefixer]) )
         .pipe( gulp.dest('build/') );
 });
 

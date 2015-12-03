@@ -4,7 +4,7 @@
  * @email : 531840344@qq.com
  */
 
-@import "bower_components/sassCore/base";
+@import "bower_components/sassCore/function";
 
 @mixin table-scaffolding {
     th {
@@ -19,9 +19,15 @@
     margin-left: $dist;
 }
 
+$color: red;
+
 #data {
     @include left(10px);
     @include transition(all 0.3s ease);
     @include table-scaffolding;
+    color: $color;
+    .item{
+        display: inline-block;
+    }
 }
 
