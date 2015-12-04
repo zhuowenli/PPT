@@ -1,5 +1,7 @@
 #PPT
 
+Powered by: [nodePPT](https://github.com/ksky521/nodePPT)
+
 ### 安装
 
     npm install -g nodeppt
@@ -20,8 +22,7 @@ clone项目到本地
 
 ## 目录
 
-- [新时代的前端架构](https://github.com/zhuowenli/PPT/tree/master/Front-End-Architecture) [在线地址](http://www.zhuowenli.com/ppt/Front-End-Architecture)
+- [新时代的前端架构](https://github.com/zhuowenli/PPT/tree/master/Front-End-Architecture) [「在线地址」](http://www.zhuowenli.com/ppt/Front-End-Architecture)
 
 
 
-Powered by: [nodePPT](https://github.com/ksky521/nodePPT)
