@@ -1,0 +1,13 @@
+body{
+  /*background:#232323;*/
+}
+.wrapper{
+    margin: 30px auto;
+    width:860px;
+    height:400px;
+}
+#editor {
+    width:860px;
+    height:270px;
+    font-size: 16px;
+}

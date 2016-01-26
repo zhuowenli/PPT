@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>demo 0</title>
+    <link rel="stylesheet" href="./css/demo.css">
+</head>
+<body>
+<div class="wrapper">
+
+    <div class="run-box">
+        <button id="run">RUN CODE</button>
+        <br/><br/>
+    </div>
+
+<div id="editor">function f(str){
+    var res = str.match(/(([01]+?)[01]*?)\1+\2$/);
+    return {
+        src: str,
+        tail: res[0],
+        sub: res[1],
+        len: res[0].length / res[1].length
+    }
+}
+console.log(f('11111111101001001001001001'));</div>
+
+</div>
+<script src="./js/ace-builds/src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+<script src="./js/demo.js"></script>
+</body>
+</html>
