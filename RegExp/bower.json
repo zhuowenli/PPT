@@ -1,0 +1,23 @@
+{
+  "name": "RegExp",
+  "homepage": "https://github.com/zhuowenli/PPT",
+  "authors": [
+    "卓文理"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.2.0",
+    "ace-builds": "~1.2.3",
+    "echarts": "~3.0.2"
+  }
+}

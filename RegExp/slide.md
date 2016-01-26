@@ -67,8 +67,6 @@ https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_Expression
 | g       | 全局匹配 [demo](#10)     |
 | u       | Unicode 模式 (ES6)     |
 | y       | sticky 粘滞 (ES6)     |
-<br>
-![兼容性视图](/img/compatibility1.png)
 
 [slide]
 <iframe class="code-iframe" data-src="/demo_2.html" src="about:blank;"></iframe>
@@ -82,6 +80,7 @@ https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_Expression
 [slide]
 {:&.flexbox.vleft}
 ##正则引擎的分类
+
 ###DFA
 ###传统型 NFA
 ###POSIX NFA
@@ -141,22 +140,16 @@ https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_Expression
 ###使用起始锚点
 
 [slide]
-{:&.flexbox.vleft}
-##一些关于优化的关键字
-<iframe class="code-iframe" data-src="/demo_word.html" src="about:blank;"></iframe>
 
-[slide]
-###参考资料:
+## 参考资料
 
 {:&.flexbox.vleft}
 
-###[《精通正则表达式》](http://book.douban.com/subject/2154713/)
-
-###https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_Expressions
-
-###http://www.cnblogs.com/ziyunfei/archive/2012/12/07/2807313.html
-
-###http://regexper.com/
+- [《精通正则表达式》](http://book.douban.com/subject/2154713/)
+- [MDN - 正则表达式](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_Expressions)
+- [JavaScript:正则表达式的/y标识](http://www.cnblogs.com/ziyunfei/archive/2012/12/07/2807313.html)
+- [NFA引擎匹配原理](http://blog.csdn.net/lxcnn/article/details/4304651)
+- http://regexper.com/
 
 [slide]
 # Q & A
