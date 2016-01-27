@@ -105,6 +105,29 @@ https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_Expression
 ###6.匹配彻底失败：如果从目标字符串的每一个字符（包括最后一个字符之后的位置）开始的尝试都失败了，就会报告匹配彻底失败。
 
 [slide]
+
+```bash
++----------------+
+|      编译      |
++----------------+
+         |
+         ↓
++----------------+
+|   设置开始位置   |←---------+
++----------------+          ↑
+         |                  |
+         ↓               其 |
++----------------+       他 |
+|   匹配 & 回溯   |       路 |
++----------------+       径 |
+         |                  |
+         ↓                  |
++----------------+          |
+|   成功 or 失败  |---------→+
++----------------+
+```
+
+[slide]
 <iframe class="code-iframe" data-src="/demo_6.html" src="about:blank;"></iframe>
 
 [slide]
@@ -149,6 +172,7 @@ https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_Expression
 - [MDN - 正则表达式](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_Expressions)
 - [JavaScript:正则表达式的/y标识](http://www.cnblogs.com/ziyunfei/archive/2012/12/07/2807313.html)
 - [NFA引擎匹配原理](http://blog.csdn.net/lxcnn/article/details/4304651)
+- [进阶正则表达式](http://div.io/topic/764)
 - http://regexper.com/
 
 [slide]

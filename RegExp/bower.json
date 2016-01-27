@@ -17,7 +17,6 @@
   ],
   "dependencies": {
     "jquery": "~2.2.0",
-    "ace-builds": "~1.2.3",
-    "echarts": "~3.0.2"
+    "ace-builds": "~1.2.3"
   }
 }
